@@ -13,6 +13,7 @@ import UIKit
 @objc(ToDoListTableViewController) class ToDoListTableViewController: UITableViewController {
     
     var detailViewController: ListDetailViewController? = nil
+    let gradientLayer = CAGradientLayer()
 
     @IBAction func unwindToList(segue:UIStoryboardSegue){
         let source: AddToDoViewController = segue.sourceViewController as! AddToDoViewController
@@ -34,6 +35,7 @@ import UIKit
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ListDetailViewController
         }
+       
 
         loadInitialData()
     }
@@ -60,21 +62,11 @@ import UIKit
         
         let cell : UITableViewCell = (tableView.dequeueReusableCellWithIdentifier(CellIndentifier as String) as UITableViewCell!)
         
+        
         let todoitem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as! ToDoItem
         
         cell.textLabel?.text = todoitem.itemName as String
         
-//        if todoitem.completed{
-//            
-//            cell.accessoryType = .Checkmark
-//            
-//        }
-//            
-//        else{
-//            
-//            cell.accessoryType = .None
-//            
-//        }
         
         return cell
     }
