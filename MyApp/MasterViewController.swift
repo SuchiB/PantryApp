@@ -59,7 +59,14 @@ class MasterViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return self.toDoItems.count
     }
-
+    
+    
+    func colorForIndex(index: Int) -> UIColor {
+        let itemCount = toDoItems.count - 1
+        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
+        return UIColor(red: 1.0, green: val, blue: 0.0, alpha: 1.0)
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -83,6 +90,7 @@ class MasterViewController: UITableViewController {
                     cell.accessoryType = .None
                     
                 }
+        cell.backgroundColor = colorForIndex(indexPath.row)
 
         return cell
     }
