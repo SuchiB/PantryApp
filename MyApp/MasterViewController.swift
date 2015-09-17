@@ -60,8 +60,8 @@ class MasterViewController: UITableViewController {
         return self.toDoItems.count
     }
     
-    
-    func colorForIndex(index: Int) -> UIColor {
+    //Create a gradient color for the Table View Cell
+    func tableCellColorForIndex(index: Int) -> UIColor {
         let itemCount = toDoItems.count - 1
         let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
         return UIColor(red: 1.0, green: val, blue: 0.0, alpha: 1.0)
@@ -79,18 +79,20 @@ class MasterViewController: UITableViewController {
         
         cell.textLabel?.text = todoitem.itemName as String
         
-                if todoitem.completed{
+//                if todoitem.completed{
+//        
+//                    cell.accessoryType = .Checkmark
+//        
+//                }
+//        
+//                else{
+//        
+//                    cell.accessoryType = .None
+//                    
+//                }
         
-                    cell.accessoryType = .Checkmark
-        
-                }
-        
-                else{
-        
-                    cell.accessoryType = .None
-                    
-                }
-        cell.backgroundColor = colorForIndex(indexPath.row)
+        //set the colot to the Table View cell
+        cell.backgroundColor = tableCellColorForIndex(indexPath.row)
 
         return cell
     }
