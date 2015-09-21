@@ -1,6 +1,6 @@
 //
 //  MasterViewController.swift
-//  ToDoListApp
+//  PantryApp
 //
 //  Created by Suruchi on 27/08/2015.
 //  Copyright © 2015 Shiva Narrthine. All rights reserved.
@@ -16,21 +16,42 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        
+        //code for persistant storage
+        
+//        if NSUserDefaults.standardUserDefaults().objectForKey("pantryList") != nil {
+//            
+//            toDoItems = NSUserDefaults.standardUserDefaults().objectForKey("pantryList") as! NSMutableArray
+//            
+//        }
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.setLeftBarButtonItem(nil, animated: true)
+        //Load dummy data
         loadInitialData()
     }
     
+    //Load initial dummy data
     func loadInitialData(){
-        let item1 = ToDoItem(name:"Coles")
+        var item1 = ToDoItem(name:"Create New List")
         self.toDoItems.addObject(item1)
-        let item2 = ToDoItem(name: "Bunnings")
-        self.toDoItems.addObject(item2)
-        let item3 = ToDoItem(name: "KMart")
-        self.toDoItems.addObject(item3)
+        item1 = ToDoItem(name: "Bunnings")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "KMart")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "Target")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "Coles")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "BigW")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "Woolworth")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "Morley Fresh")
+        self.toDoItems.addObject(item1)
+        item1 = ToDoItem(name: "HarveyNorman")
+        self.toDoItems.addObject(item1)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +61,9 @@ class MasterViewController: UITableViewController {
     
     
     @IBAction func unwindToList(segue:UIStoryboardSegue){
+        
         let source: AddToDoViewController = segue.sourceViewController as! AddToDoViewController
+        
         if let item: ToDoItem = source.toDoItem{
             self.toDoItems.addObject(item)
             self.tableView.reloadData()
@@ -49,7 +72,6 @@ class MasterViewController: UITableViewController {
 
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -70,8 +92,24 @@ class MasterViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
+        //NSUserDefaults.standardUserDefaults().setObject(self.toDoItems, forKey: "pantryList")
+        
         // Configure the cell...
-        let CellIndentifier: NSString = "ListPrototypeCell"
+        
+        let CellIndentifier: NSString!// = "ListPrototypeCell"
+        
+        //Applying different cell formates for first cell to show a create new List option
+        if indexPath.row == 0 {
+            
+            CellIndentifier = "CreateNew"
+            
+        }else{
+            
+            CellIndentifier = "ListPrototypeCell"
+            
+        }
+            
         
         let cell : UITableViewCell = (tableView.dequeueReusableCellWithIdentifier(CellIndentifier as String) as UITableViewCell!)
         
@@ -79,28 +117,18 @@ class MasterViewController: UITableViewController {
         
         cell.textLabel?.text = todoitem.itemName as String
         
-//                if todoitem.completed{
-//        
-//                    cell.accessoryType = .Checkmark
-//        
-//                }
-//        
-//                else{
-//        
-//                    cell.accessoryType = .None
-//                    
-//                }
-        
         //set the colot to the Table View cell
         cell.backgroundColor = tableCellColorForIndex(indexPath.row)
 
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         let tappedItem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as! ToDoItem
         tappedItem.completed = !tappedItem.completed
+        
         // NSLog(<#T##format: String##String#>, <#T##args: CVarArgType...##CVarArgType#>)
         tableView.reloadData()
         
@@ -150,18 +178,15 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-       // if segue.identifier == "showDetail"
-        //{
+        
                 if let indexPath = self.tableView.indexPathForSelectedRow
                 {
                     let object = self.toDoItems[indexPath.row]
                     let controller = (segue.destinationViewController  as! ListDetailViewController)
                     
-                   controller.detailItem = object as! ToDoItem
-                  //  controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                  //  controller.navigationItem.leftItemsSupplementBackButton = true
+                   controller.detailItem = object as? ToDoItem
+                  
                 }
-        //}
 
     }
     

@@ -38,12 +38,13 @@ class AddToDoViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if sender as? NSObject != self.doneButton{
+        if sender as? NSObject == self.doneButton{
+            if !self.textfield.text!.isEmpty{
+                self.toDoItem = ToDoItem(name: self.textfield.text!)
+            }
             return
         }
-        if !self.textfield.text!.isEmpty{
-            self.toDoItem = ToDoItem(name: self.textfield.text!)
-        }
+       
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

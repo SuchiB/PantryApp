@@ -10,6 +10,7 @@ import UIKit
 
 class ListDetailViewController: UIViewController {
     
+    @IBOutlet weak var detailCancle: UIBarButtonItem!
     
     @IBOutlet weak var detailTitle: UILabel!
 
@@ -44,4 +45,10 @@ class ListDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancleDetailView(sender: UIBarButtonItem) {
+
+        navigationController!.popViewControllerAnimated(true)
+            print("cancel")
+    }
+        
 }
