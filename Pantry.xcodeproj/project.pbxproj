@@ -15,6 +15,7 @@
 		9B8156141BAFBA1A00AAC142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8156131BAFBA1A00AAC142 /* Main.storyboard */; };
 		9BE8E7501BAA9745001AB758 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8E74F1BAA9745001AB758 /* Launch Screen.storyboard */; };
 		9BF168C31B8EA85500D7493C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF168C21B8EA85500D7493C /* MasterViewController.swift */; };
+		F9B3B6D71BB1805E00BA2D64 /* ToBuyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9B8156131BAFBA1A00AAC142 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9BE8E74F1BAA9745001AB758 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9BF168C21B8EA85500D7493C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToBuyItem.swift; path = ../ToBuyItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				79C5974819418A280085192D /* AddToDoViewController.swift */,
+				F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */,
 				79C5974619418A280085192D /* AppDelegate.swift */,
 				795A073B1941B34900BFB490 /* TableViewController.h */,
 				795A073C1941B68E00BFB490 /* ToDoItem.swift */,
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B3B6D71BB1805E00BA2D64 /* ToBuyItem.swift in Sources */,
 				79C5974919418A280085192D /* AddToDoViewController.swift in Sources */,
 				9BF168C31B8EA85500D7493C /* MasterViewController.swift in Sources */,
 				795A073D1941B68E00BFB490 /* ToDoItem.swift in Sources */,

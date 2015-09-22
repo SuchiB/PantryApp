@@ -14,7 +14,9 @@ class ListDetailViewController: UIViewController {
     
     @IBOutlet weak var detailTitle: UILabel!
 
+    @IBOutlet var txtItem: UITextField!
     
+    @IBOutlet var detailTableView: UITableView!
     var detailItem: ToDoItem? {
         didSet {
             // Update the view.
@@ -39,11 +41,39 @@ class ListDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         //detailTitle.text = "Shopping List"
     }
+    
+    @IBAction func addButton_Click(sender: AnyObject) {
+        
+        
+        toByItm.addDetailItem(detailTitle.text!, detailItemName: txtItem.text!, detailItemCompleted: false)
+        txtItem.text = ""
+        detailTableView.reloadData()
 
+        
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return toByItm.buyingItems.count
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        cell.textLabel?.text = toByItm.buyingItems[indexPath.row].detailItemName
+        return cell
+    }
+
+    
+    
+    
+    
     
     @IBAction func cancleDetailView(sender: UIBarButtonItem) {
 

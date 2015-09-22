@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do Item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVC-Ud-MB2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do Item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVC-Ud-MB2">
                                 <rect key="frame" x="20" y="174" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -83,7 +83,7 @@
                                     <outlet property="delegate" destination="2a1-OI-Zgy" id="Hrg-vj-wl9"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laT-U2-rYw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laT-U2-rYw">
                                 <rect key="frame" x="20" y="254" width="117" height="30"/>
                                 <state key="normal" title="Find My Location"/>
                                 <connections>
@@ -134,19 +134,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot4-2I-M62">
-                                <rect key="frame" x="20" y="273" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot4-2I-M62">
+                                <rect key="frame" x="20" y="66" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fJq-1D-JJs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter to buy item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Osz-oT-s8Z">
+                                <rect key="frame" x="20" y="95" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0s-36-7EP">
+                                <rect key="frame" x="215" y="133" width="85" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="jpK-Wj-1Fg"/>
+                                </constraints>
+                                <state key="normal" title="Add Item"/>
+                                <connections>
+                                    <action selector="addButton_Click:" destination="XEp-TS-jBS" eventType="touchUpInside" id="E1E-1d-nVT"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cQQ-Mb-2f7">
+                                <rect key="frame" x="20" y="162" width="280" height="362"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="DyX-WI-lrW">
+                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DyX-WI-lrW" id="wEf-Rz-mRa">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XEp-TS-jBS" id="47L-pO-NQD"/>
+                                    <outlet property="delegate" destination="XEp-TS-jBS" id="Nvq-Ml-bRm"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ot4-2I-M62" firstAttribute="top" secondItem="cve-BM-gor" secondAttribute="bottom" constant="253" id="7ZY-Dp-I8l"/>
-                            <constraint firstItem="ot4-2I-M62" firstAttribute="centerX" secondItem="zxF-Q8-2dd" secondAttribute="centerX" id="cBg-F1-66f"/>
-                            <constraint firstItem="ot4-2I-M62" firstAttribute="centerY" secondItem="zxF-Q8-2dd" secondAttribute="centerY" id="qgb-3i-gpy"/>
-                            <constraint firstItem="ot4-2I-M62" firstAttribute="leading" secondItem="zxF-Q8-2dd" secondAttribute="leadingMargin" constant="4" id="yll-XH-KGh"/>
+                            <constraint firstItem="o0s-36-7EP" firstAttribute="trailing" secondItem="Osz-oT-s8Z" secondAttribute="trailing" id="19G-gQ-6fj"/>
+                            <constraint firstItem="cQQ-Mb-2f7" firstAttribute="trailing" secondItem="o0s-36-7EP" secondAttribute="trailing" id="20I-CR-0nX"/>
+                            <constraint firstItem="ot4-2I-M62" firstAttribute="leading" secondItem="Osz-oT-s8Z" secondAttribute="leading" id="4P4-1L-Yej"/>
+                            <constraint firstItem="cQQ-Mb-2f7" firstAttribute="bottom" secondItem="7TX-Hr-Edr" secondAttribute="top" id="76J-Wu-dvY"/>
+                            <constraint firstItem="ot4-2I-M62" firstAttribute="centerX" secondItem="zxF-Q8-2dd" secondAttribute="centerX" id="AAO-mx-hKO"/>
+                            <constraint firstItem="Osz-oT-s8Z" firstAttribute="trailing" secondItem="ot4-2I-M62" secondAttribute="trailing" id="Ful-eH-Pcn"/>
+                            <constraint firstItem="ot4-2I-M62" firstAttribute="leading" secondItem="zxF-Q8-2dd" secondAttribute="leadingMargin" constant="4" id="K6B-37-Gmq"/>
+                            <constraint firstItem="Osz-oT-s8Z" firstAttribute="top" secondItem="ot4-2I-M62" secondAttribute="bottom" constant="8" symbolic="YES" id="MHU-nv-NQE"/>
+                            <constraint firstItem="ot4-2I-M62" firstAttribute="top" secondItem="cve-BM-gor" secondAttribute="bottom" constant="2" id="RdB-T2-dcp"/>
+                            <constraint firstItem="cQQ-Mb-2f7" firstAttribute="leading" secondItem="Osz-oT-s8Z" secondAttribute="leading" id="cu6-vV-96r"/>
+                            <constraint firstItem="o0s-36-7EP" firstAttribute="top" secondItem="Osz-oT-s8Z" secondAttribute="bottom" constant="8" symbolic="YES" id="lTt-VL-oTO"/>
+                            <constraint firstItem="cQQ-Mb-2f7" firstAttribute="top" secondItem="Osz-oT-s8Z" secondAttribute="bottom" constant="37" id="syi-Jz-GEX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DetailView" id="Ijk-NX-hEU">
@@ -157,7 +202,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailTableView" destination="cQQ-Mb-2f7" id="oC2-Mj-Ac7"/>
                         <outlet property="detailTitle" destination="ot4-2I-M62" id="ujd-Rr-Dpd"/>
+                        <outlet property="txtItem" destination="Osz-oT-s8Z" id="OsR-Sj-tzY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ln-Gt-g4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
