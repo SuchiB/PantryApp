@@ -185,6 +185,7 @@ class MasterViewController: UITableViewController {
                     let controller = (segue.destinationViewController  as! ListDetailViewController)
                     
                    controller.detailItem = object as? ToDoItem
+                   controller.title = toDoItems[indexPath.row].itemName as String
                   
                 }
 
