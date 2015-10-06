@@ -16,6 +16,7 @@
 		9BF168C31B8EA85500D7493C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF168C21B8EA85500D7493C /* MasterViewController.swift */; };
 		F902CC361BB38377006077ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F902CC351BB38377006077ED /* Main.storyboard */; };
 		F9B3B6D71BB1805E00BA2D64 /* ToBuyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */; };
+		F9CF9B771BC395790053D4AE /* Pantry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9CF9B751BC395790053D4AE /* Pantry.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9BF168C21B8EA85500D7493C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		F902CC351BB38377006077ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToBuyItem.swift; path = ../ToBuyItem.swift; sourceTree = "<group>"; };
+		F9CF9B761BC395790053D4AE /* Pantry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pantry.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		79C5974419418A280085192D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9CF9B751BC395790053D4AE /* Pantry.xcdatamodeld */,
 				79C5974519418A280085192D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -216,6 +219,7 @@
 				79C5974919418A280085192D /* AddToDoViewController.swift in Sources */,
 				9BF168C31B8EA85500D7493C /* MasterViewController.swift in Sources */,
 				795A073D1941B68E00BFB490 /* ToDoItem.swift in Sources */,
+				F9CF9B771BC395790053D4AE /* Pantry.xcdatamodeld in Sources */,
 				79C5974719418A280085192D /* AppDelegate.swift in Sources */,
 				9B0D78251B8C4E1E009AB47F /* ListDetailViewController.swift in Sources */,
 			);
@@ -362,6 +366,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9CF9B751BC395790053D4AE /* Pantry.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9CF9B761BC395790053D4AE /* Pantry.xcdatamodel */,
+			);
+			currentVersion = F9CF9B761BC395790053D4AE /* Pantry.xcdatamodel */;
+			name = Pantry.xcdatamodeld;
+			path = ../Pantry.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 79C5973919418A280085192D /* Project object */;
 }
