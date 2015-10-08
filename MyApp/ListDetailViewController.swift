@@ -96,6 +96,35 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
         toBuyItem.append(buyItem)
     }
     
+    func deletItem(detailItemName: String) {
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        
+        let entity =  NSEntityDescription.entityForName("ToBuyItem",
+            inManagedObjectContext:
+            managedContext)
+        
+        let buyItem = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedContext)
+        
+        
+        buyItem.setValue(detailItemName, forKey: "detailItemName")
+        buyItem.removeObserver(detailItemName, forKeyPath: "detailItemName")
+        
+        //var error: NSError?
+        do{
+            try managedContext.save()
+        }catch{
+            
+            print("Could not save \(error)")
+            
+        }
+        
+    }
     
     
     //Get data from database
@@ -161,10 +190,34 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
         cell.textLabel?.text = buyingItem.valueForKey("detailItemName") as? String
         return cell
     }
-
     
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch editingStyle {
+        case .Delete:
+            // remove the deleted item from the model
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext
+            context.deleteObject(toBuyItem[indexPath.row] as NSManagedObject)
+            toBuyItem.removeAtIndex(indexPath.row)
+            do{
+                try context.save()
+            }catch{
+                
+                print("Could not save \(error)")
+                
+            }
+            
+            //tableView.reloadData()
+            // remove the deleted item from the `UITableView`
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        default:
+            return
+            
+        }
+    }
     
+       
     
     
     @IBAction func cancleDetailView(sender: UIBarButtonItem) {
