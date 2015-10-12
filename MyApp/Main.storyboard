@@ -166,15 +166,18 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="DyX-WI-lrW">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DyX-WI-lrW" id="wEf-Rz-mRa">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="DyX-WI-lrW" id="wEf-Rz-mRa">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter items name " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-Vt-wpj">
-                                                    <rect key="frame" x="38" y="8" width="205" height="30"/>
+                                                    <rect key="frame" x="41" y="8" width="205" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkedBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="OFb-0m-UYu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43.5"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -241,6 +244,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="363" height="645"/>
+        <image name="checkedBox.png" width="51" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="90G-Sf-KcH"/>

@@ -14,6 +14,7 @@ import CoreData
 class ListDetailViewController: UIViewController,UITableViewDataSource {
     
     var toBuyItem = [NSManagedObject]()
+    var checked = [Bool]()
 
     
     @IBOutlet weak var detailCancle: UIBarButtonItem!
@@ -82,6 +83,7 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
         
         
         buyItem.setValue(detailItemName, forKey: "detailItemName")
+        buyItem.setValue(false, forKey: "detailItemCompleted")
         
         
         //var error: NSError?
@@ -111,8 +113,6 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
         let buyItem = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext:managedContext)
         
-        
-        buyItem.setValue(detailItemName, forKey: "detailItemName")
         buyItem.removeObserver(detailItemName, forKeyPath: "detailItemName")
         
         //var error: NSError?
@@ -188,6 +188,25 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
         let buyingItem = toBuyItem[indexPath.row]
         //cell.textLabel?.text = toByItm.buyingItems[indexPath.row].detailItemName
         cell.textLabel?.text = buyingItem.valueForKey("detailItemName") as? String
+        
+        
+        if buyingItem.valueForKey("detailItemCompleted") as! Bool == false
+            
+        {
+            
+            cell.textLabel!.text = " " + cell.textLabel!.text!
+            
+        }
+            
+        else // check is true
+            
+        {
+            
+            cell.textLabel!.text = "\u{2705}" + cell.textLabel!.text!
+        }
+        
+
+        
         return cell
     }
     
@@ -215,9 +234,51 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
             return
             
         }
+        
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
+    {
+        
+        return UITableViewCellEditingStyle.Insert
+        
+        }
+        
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            
+            let buyingItem = toBuyItem[indexPath.row]
+            
+            if buyingItem.valueForKey("detailItemCompleted") as! Bool == false
+                
+                
+            
+            //if cell.accessoryType == .Checkmark
+            {
+                cell.textLabel!.text =   "\u{2705}" + cell.textLabel!.text!
+
+                buyingItem.setValue(true, forKey: "detailItemCompleted")
+                print (buyingItem.valueForKey("detailItemCompleted"))
+                //checked[indexPath.row - 1] = false
+            }
+            else
+            {
+                cell.accessoryType = .None
+                buyingItem.setValue(false, forKey: "detailItemCompleted")
+                print (buyingItem.valueForKey("detailItemCompleted"))
+                
+                
     
-       
+               // cell.accessoryType = .Checkmark
+               // checked[indexPath.row - 1] = true
+            }
+            tableView.reloadData()
+        }    
+    }
+
+ 
+    
     
     
     @IBAction func cancleDetailView(sender: UIBarButtonItem) {
