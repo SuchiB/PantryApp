@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 
-class ListDetailViewController: UIViewController,UITableViewDataSource {
+class ListDetailViewController: UIViewController,UITableViewDataSource , UIPickerViewDelegate, UIPickerViewDataSource{
     
     var toBuyItem = [NSManagedObject]()
     var checked = [Bool]()
@@ -24,6 +24,12 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
     @IBOutlet var txtItem: UITextField!
     
     @IBOutlet var detailTableView: UITableView!
+    
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    var pickerDataSource = ["White", "Red", "Green", "Blue"];
+
     
     var detailItem: ToDoItem? {
         didSet {
@@ -46,21 +52,36 @@ class ListDetailViewController: UIViewController,UITableViewDataSource {
         super.viewDidLoad()
         self.configureView()
 
-        // Do any additional setup after loading the view.
-        //detailTitle.text = "Shopping List"
+        self.pickerView.dataSource = self;
+        self.pickerView.delegate = self;
     }
     
+    //pickerView
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerDataSource[row]
+        
+    }
+
     @IBAction func addButton_Click(sender: AnyObject) {
         
         var detailName: String
         detailName = txtItem.text!
         
         //toByItm.addDetailItem(detailTitle.text!, detailItemName: txtItem.text!, detailItemCompleted: false)
-        
+        if detailName != "" {
         saveItem(detailName)
         txtItem.text = ""
         detailTableView.reloadData()
-
+        }
         
     }
     
