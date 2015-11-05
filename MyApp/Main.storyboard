@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Umw-1g-8ql">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Umw-1g-8ql">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +44,20 @@
                                                 <segue destination="vLz-Qu-Afi" kind="push" id="kwk-Vu-yPz"/>
                                             </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-r6-4Xk" customClass="GADBannerView">
+                                            <rect key="frame" x="94" y="0.0" width="160" height="22"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="320" id="7hr-VM-eet"/>
+                                                <constraint firstAttribute="height" constant="50" id="Zx8-yG-Yva"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Dgd-r6-4Xk" secondAttribute="trailing" id="5Qf-k6-v3K"/>
+                                        <constraint firstItem="Dgd-r6-4Xk" firstAttribute="leading" secondItem="vjE-q6-iu3" secondAttribute="leadingMargin" id="B0s-44-pfW"/>
+                                        <constraint firstItem="Dgd-r6-4Xk" firstAttribute="top" secondItem="vjE-q6-iu3" secondAttribute="topMargin" constant="107" id="cCf-vo-Lf7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -58,6 +70,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Shopping Lists" id="JXx-5k-B46"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="BannerView" destination="Dgd-r6-4Xk" id="sAX-tf-lLt"/>
+                        <outlet property="BannerView10" destination="Dgd-r6-4Xk" id="U7b-oe-WGQ"/>
+                        <outlet property="BannerView3" destination="Dgd-r6-4Xk" id="I7a-mZ-crd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRW-DD-sh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do Item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVC-Ud-MB2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do Item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVC-Ud-MB2">
                                 <rect key="frame" x="20" y="174" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -83,20 +100,32 @@
                                     <outlet property="delegate" destination="2a1-OI-Zgy" id="Hrg-vj-wl9"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laT-U2-rYw">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laT-U2-rYw">
                                 <rect key="frame" x="20" y="254" width="117" height="30"/>
                                 <state key="normal" title="Find My Location"/>
                                 <connections>
                                     <action selector="findMyLocation:" destination="vLz-Qu-Afi" eventType="touchUpInside" id="jyO-wb-Fk9"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-sB-pWP" customClass="GADBannerView">
+                                <rect key="frame" x="16" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Xf7-0n-feP"/>
+                                    <constraint firstAttribute="height" constant="50" id="sO4-KL-NPe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="laT-U2-rYw" firstAttribute="top" secondItem="BVC-Ud-MB2" secondAttribute="bottom" constant="50" id="0Rh-ii-O2h"/>
                             <constraint firstItem="BVC-Ud-MB2" firstAttribute="top" secondItem="hHa-F3-q4p" secondAttribute="bottom" constant="110" id="D8W-Na-1k1"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cs7-sB-pWP" secondAttribute="bottom" id="KhC-Mb-YHh"/>
                             <constraint firstItem="laT-U2-rYw" firstAttribute="leading" secondItem="BVC-Ud-MB2" secondAttribute="leading" id="Nxh-U4-X0i"/>
+                            <constraint firstAttribute="centerX" secondItem="cs7-sB-pWP" secondAttribute="centerX" id="dhb-Lx-hCJ"/>
                             <constraint firstItem="BVC-Ud-MB2" firstAttribute="centerX" secondItem="2a1-OI-Zgy" secondAttribute="centerX" id="kIw-jc-NFe"/>
+                            <constraint firstItem="cs7-sB-pWP" firstAttribute="top" secondItem="laT-U2-rYw" secondAttribute="bottom" constant="107" id="kvt-XR-VbC"/>
+                            <constraint firstItem="cs7-sB-pWP" firstAttribute="leading" secondItem="2a1-OI-Zgy" secondAttribute="leadingMargin" id="v00-Cm-SJ5"/>
                             <constraint firstItem="BVC-Ud-MB2" firstAttribute="leading" secondItem="2a1-OI-Zgy" secondAttribute="leadingMargin" constant="4" id="zKG-pj-Kma"/>
                         </constraints>
                     </view>
@@ -113,6 +142,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="BannerView" destination="2a1-OI-Zgy" id="oyz-2s-xQN"/>
+                        <outlet property="BannerView1" destination="cs7-sB-pWP" id="Fjv-C5-xs5"/>
                         <outlet property="doneButton" destination="ckV-om-WgZ" id="hnI-1z-oJc"/>
                         <outlet property="textfield" destination="BVC-Ud-MB2" id="6Fi-je-XGR"/>
                     </connections>
@@ -165,7 +196,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cQQ-Mb-2f7">
-                                <rect key="frame" x="20" y="162" width="280" height="362"/>
+                                <rect key="frame" x="35" y="167" width="265" height="147"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="DyX-WI-lrW">
@@ -175,7 +206,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter items name " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-Vt-wpj">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter items name " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-Vt-wpj">
                                                     <rect key="frame" x="41" y="8" width="205" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -215,7 +246,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="left" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-vK-hQD">
-                                <rect key="frame" x="92" y="87" width="208" height="47"/>
+                                <rect key="frame" x="96" y="87" width="208" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="i3V-n5-RVY"/>
                                 </constraints>
@@ -224,6 +255,38 @@
                                     <outlet property="delegate" destination="XEp-TS-jBS" id="5S2-yI-tWf"/>
                                 </connections>
                             </pickerView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tkn-Dj-jvm">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="do3-dH-Zgr"/>
+                                    <constraint firstAttribute="width" constant="320" id="gnB-KT-jNi"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oB-1I-cv6">
+                                <rect key="frame" x="245" y="9" width="40" height="30"/>
+                                <state key="normal" title="Clock">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Picker1:" destination="XEp-TS-jBS" eventType="touchUpInside" id="kra-ZC-eB2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRG-6r-fA7">
+                                <rect key="frame" x="20" y="322" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oa1-0M-TWt">
+                                <rect key="frame" x="0.0" y="362" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="468388636.65191001">
+                                    <!--2015-11-05 03:57:16 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="Picker1:" destination="XEp-TS-jBS" eventType="valueChanged" id="LLl-sG-pMG"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -235,8 +298,13 @@
                             <constraint firstItem="ot4-2I-M62" firstAttribute="leading" secondItem="Osz-oT-s8Z" secondAttribute="leading" id="4P4-1L-Yej"/>
                             <constraint firstItem="cQQ-Mb-2f7" firstAttribute="bottom" secondItem="7TX-Hr-Edr" secondAttribute="top" id="76J-Wu-dvY"/>
                             <constraint firstItem="ot4-2I-M62" firstAttribute="centerX" secondItem="zxF-Q8-2dd" secondAttribute="centerX" id="AAO-mx-hKO"/>
+                            <constraint firstItem="tkn-Dj-jvm" firstAttribute="top" secondItem="zxF-Q8-2dd" secondAttribute="topMargin" constant="107" id="BOe-Z0-vbv"/>
                             <constraint firstItem="Osz-oT-s8Z" firstAttribute="leading" secondItem="zxF-Q8-2dd" secondAttribute="leadingMargin" id="EYP-JW-BGY"/>
+                            <constraint firstItem="o0s-36-7EP" firstAttribute="leading" secondItem="tkn-Dj-jvm" secondAttribute="trailing" id="FFj-Pg-mc8"/>
+                            <constraint firstItem="tkn-Dj-jvm" firstAttribute="leading" secondItem="zxF-Q8-2dd" secondAttribute="leadingMargin" id="FKc-L0-2AJ"/>
                             <constraint firstItem="Osz-oT-s8Z" firstAttribute="trailing" secondItem="ot4-2I-M62" secondAttribute="trailing" constant="-84" id="Ful-eH-Pcn"/>
+                            <constraint firstAttribute="centerY" secondItem="oa1-0M-TWt" secondAttribute="centerY" id="I1p-e7-3mA"/>
+                            <constraint firstAttribute="centerX" secondItem="tkn-Dj-jvm" secondAttribute="centerX" id="Jo5-iv-AmA"/>
                             <constraint firstItem="ot4-2I-M62" firstAttribute="leading" secondItem="zxF-Q8-2dd" secondAttribute="leadingMargin" constant="4" id="K6B-37-Gmq"/>
                             <constraint firstItem="Osz-oT-s8Z" firstAttribute="leading" secondItem="zxF-Q8-2dd" secondAttribute="leadingMargin" id="L45-CZ-CgQ"/>
                             <constraint firstItem="Osz-oT-s8Z" firstAttribute="top" secondItem="ot4-2I-M62" secondAttribute="bottom" constant="46" id="MHU-nv-NQE"/>
@@ -257,9 +325,11 @@
                             <constraint firstItem="73p-48-s8c" firstAttribute="top" secondItem="zxF-Q8-2dd" secondAttribute="top" constant="87" id="j0N-iu-mP9"/>
                             <constraint firstItem="o0s-36-7EP" firstAttribute="top" secondItem="Osz-oT-s8Z" secondAttribute="bottom" constant="-30" id="lTt-VL-oTO"/>
                             <constraint firstItem="cQQ-Mb-2f7" firstAttribute="top" secondItem="Osz-oT-s8Z" secondAttribute="bottom" constant="-1" id="syi-Jz-GEX"/>
+                            <constraint firstAttribute="centerX" secondItem="oa1-0M-TWt" secondAttribute="centerX" id="ydw-Wy-AG3"/>
                             <constraint firstItem="73p-48-s8c" firstAttribute="leading" secondItem="ot4-2I-M62" secondAttribute="leading" id="zgK-ja-R4B"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="DetailView" id="Ijk-NX-hEU">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cN8-zO-nwS">
                             <connections>
@@ -269,9 +339,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="BannerView2" destination="tkn-Dj-jvm" id="pJz-n2-pLw"/>
+                        <outlet property="DisplayTime" destination="QRG-6r-fA7" id="UGE-nr-jne"/>
+                        <outlet property="bannerView" destination="oa1-0M-TWt" id="ks4-Bk-TuM"/>
+                        <outlet property="datePickerAction" destination="oa1-0M-TWt" id="rgD-MD-kxJ"/>
                         <outlet property="detailTableView" destination="cQQ-Mb-2f7" id="oC2-Mj-Ac7"/>
                         <outlet property="detailTitle" destination="ot4-2I-M62" id="ujd-Rr-Dpd"/>
+                        <outlet property="myDatePicker" destination="zxF-Q8-2dd" id="o46-Ph-YWa"/>
                         <outlet property="pickerView" destination="cwA-vK-hQD" id="F1O-ob-mZO"/>
+                        <outlet property="selectedDate" destination="QRG-6r-fA7" id="1oN-lE-YdY"/>
                         <outlet property="txtItem" destination="Osz-oT-s8Z" id="OsR-Sj-tzY"/>
                     </connections>
                 </viewController>
@@ -303,6 +379,11 @@
         <image name="Logo" width="363" height="645"/>
         <image name="checkedBox.png" width="51" height="51"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="90G-Sf-KcH"/>
     </inferredMetricsTieBreakers>
