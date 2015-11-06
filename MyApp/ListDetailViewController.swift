@@ -13,6 +13,41 @@ import CoreData
 
 class ListDetailViewController: UIViewController,UITableViewDataSource , UIPickerViewDelegate, UIPickerViewDataSource{
     
+    @IBOutlet var myDatePicker: UIView!
+    @IBOutlet weak var selectedDate: UILabel!
+    @IBOutlet weak var datePickerAction: UIDatePicker!
+    class ViewController: UIViewController {
+        
+        @IBOutlet weak var myDatePicker: UIDatePicker!
+        
+        
+        @IBOutlet weak var selectedDate: UILabel!
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view, typically from a nib.
+        }
+        
+        @IBAction func datePickerAction(sender: AnyObject) {
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+            var strDate = dateFormatter.stringFromDate(myDatePicker.date)
+            self.selectedDate.text = strDate
+            
+        }
+        
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated.
+        }
+        
+        
+    }
+    
+
+    
+
     var toBuyItem = [NSManagedObject]()
     var checked = [Bool]()
 
