@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 import GoogleMobileAds
 
-
 class AddToDoViewController: UIViewController, CLLocationManagerDelegate {
 
     
@@ -22,14 +21,14 @@ class AddToDoViewController: UIViewController, CLLocationManagerDelegate {
         
         @IBOutlet var bannerView: GADBannerView!
         
-        required init(coder aDecoder: NSCoder) {
+        required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
-            println("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+            print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
             bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
             bannerView.rootViewController = self
             bannerView.loadRequest(GADRequest())

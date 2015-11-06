@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B21D4CA1BEB2C7200BB4AD2 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B21D4C91BEB2C7200BB4AD2 /* GoogleMobileAds.framework */; };
 		795A073D1941B68E00BFB490 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A073C1941B68E00BFB490 /* ToDoItem.swift */; };
 		79C5974719418A280085192D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C5974619418A280085192D /* AppDelegate.swift */; };
 		79C5974919418A280085192D /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C5974819418A280085192D /* AddToDoViewController.swift */; };
@@ -15,13 +14,13 @@
 		9B0D78251B8C4E1E009AB47F /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D78241B8C4E1E009AB47F /* ListDetailViewController.swift */; };
 		9BE8E7501BAA9745001AB758 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8E74F1BAA9745001AB758 /* Launch Screen.storyboard */; };
 		9BF168C31B8EA85500D7493C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF168C21B8EA85500D7493C /* MasterViewController.swift */; };
+		A07848291BEC30CB00FDEF6A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07848281BEC30CB00FDEF6A /* GoogleMobileAds.framework */; };
 		F902CC361BB38377006077ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F902CC351BB38377006077ED /* Main.storyboard */; };
 		F9B3B6D71BB1805E00BA2D64 /* ToBuyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */; };
 		F9CF9B771BC395790053D4AE /* Pantry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9CF9B751BC395790053D4AE /* Pantry.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B21D4C91BEB2C7200BB4AD2 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../GoogleMobileAdsSdkiOS-7.5.2/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		795A073B1941B34900BFB490 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		795A073C1941B68E00BFB490 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		79C5974119418A280085192D /* Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +33,7 @@
 		9B0D78241B8C4E1E009AB47F /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		9BE8E74F1BAA9745001AB758 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9BF168C21B8EA85500D7493C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A07848281BEC30CB00FDEF6A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		F902CC351BB38377006077ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToBuyItem.swift; path = ../ToBuyItem.swift; sourceTree = "<group>"; };
 		F9CF9B761BC395790053D4AE /* Pantry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pantry.xcdatamodel; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B21D4CA1BEB2C7200BB4AD2 /* GoogleMobileAds.framework in Frameworks */,
+				A07848291BEC30CB00FDEF6A /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +54,6 @@
 		79C5973819418A280085192D = {
 			isa = PBXGroup;
 			children = (
-				0B21D4C91BEB2C7200BB4AD2 /* GoogleMobileAds.framework */,
 				79C5974319418A280085192D /* Pantry */,
 				79C5975619418A280085192D /* PantryTests */,
 				79C5974219418A280085192D /* Products */,
@@ -72,6 +71,7 @@
 		79C5974319418A280085192D /* Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				A07848281BEC30CB00FDEF6A /* GoogleMobileAds.framework */,
 				9BDDCC921BA7EE5400C97992 /* Assets */,
 				9BDDCC911BA7EE4500C97992 /* Views */,
 				9B28708B1BA17477000F96EB /* Controllers */,
@@ -318,14 +318,14 @@
 		79C5975E19418A280085192D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/SCOOTY,
-					"PUFF/GoogleMobileAdsSdkiOS-7.5.2",
+					"$(PROJECT_DIR)/MyApp",
 				);
 				INFOPLIST_FILE = MyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -340,14 +340,14 @@
 		79C5975F19418A280085192D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/SCOOTY,
-					"PUFF/GoogleMobileAdsSdkiOS-7.5.2",
+					"$(PROJECT_DIR)/MyApp",
 				);
 				INFOPLIST_FILE = MyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
