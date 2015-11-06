@@ -210,8 +210,8 @@ class ListDetailViewController: UIViewController,UITableViewDataSource , UIPicke
         //cell.textLabel?.text = toByItm.buyingItems[indexPath.row].detailItemName
         cell.textLabel?.text = buyingItem.valueForKey("detailItemName") as? String
         
-        
-        if buyingItem.valueForKey("detailItemCompleted") as! Bool == false
+        let completed = buyingItem.valueForKey("detailItemCompleted") as! Bool?
+        if completed == false
             
         {
             
@@ -270,8 +270,9 @@ class ListDetailViewController: UIViewController,UITableViewDataSource , UIPicke
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
             
             let buyingItem = toBuyItem[indexPath.row]
+            let completed = buyingItem.valueForKey("detailItemCompleted") as! Bool?
             
-            if buyingItem.valueForKey("detailItemCompleted") as! Bool == false
+            if  completed == false
                 
                 
             
