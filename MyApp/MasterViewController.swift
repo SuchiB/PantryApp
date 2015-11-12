@@ -183,10 +183,10 @@ class MasterViewController: UITableViewController {
                 if let indexPath = self.tableView.indexPathForSelectedRow
                 {
                     let object = self.toDoItems[indexPath.row]
-                    let controller = (segue.destinationViewController  as! ListDetailViewController)
+                    let controller: ListDetailViewController = (segue.destinationViewController) as! ListDetailViewController
                     
-                   controller.detailItem = object as? ToDoItem
-                   controller.title = toDoItems[indexPath.row].itemName as String
+                  // controller.detailItem = object as? ToDoItem
+                  // controller.title = toDoItems[indexPath.row].itemName as String
                   
                 }
 

@@ -11,6 +11,7 @@
 		79C5974719418A280085192D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C5974619418A280085192D /* AppDelegate.swift */; };
 		79C5974919418A280085192D /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C5974819418A280085192D /* AddToDoViewController.swift */; };
 		79C5974E19418A280085192D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C5974D19418A280085192D /* Images.xcassets */; };
+		9027E9C61BF4233300D8E280 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9027E9C51BF4233300D8E280 /* ViewController.swift */; };
 		9B0D78251B8C4E1E009AB47F /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D78241B8C4E1E009AB47F /* ListDetailViewController.swift */; };
 		9BE8E7501BAA9745001AB758 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8E74F1BAA9745001AB758 /* Launch Screen.storyboard */; };
 		9BF168C31B8EA85500D7493C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF168C21B8EA85500D7493C /* MasterViewController.swift */; };
@@ -30,6 +31,7 @@
 		79C5974D19418A280085192D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		79C5975819418A280085192D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79C5975919418A280085192D /* MyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppTests.swift; sourceTree = "<group>"; };
+		9027E9C51BF4233300D8E280 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../../../Volumes/Untitled/MapWikiTut/MapWikiTut/ViewController.swift; sourceTree = "<group>"; };
 		9B0D78241B8C4E1E009AB47F /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		9BE8E74F1BAA9745001AB758 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9BF168C21B8EA85500D7493C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				79C5974819418A280085192D /* AddToDoViewController.swift */,
 				F9B3B6D61BB1805E00BA2D64 /* ToBuyItem.swift */,
+				9027E9C51BF4233300D8E280 /* ViewController.swift */,
 				79C5974619418A280085192D /* AppDelegate.swift */,
 				795A073B1941B34900BFB490 /* TableViewController.h */,
 				795A073C1941B68E00BFB490 /* ToDoItem.swift */,
@@ -226,6 +229,7 @@
 				795A073D1941B68E00BFB490 /* ToDoItem.swift in Sources */,
 				F9CF9B771BC395790053D4AE /* Pantry.xcdatamodeld in Sources */,
 				79C5974719418A280085192D /* AppDelegate.swift in Sources */,
+				9027E9C61BF4233300D8E280 /* ViewController.swift in Sources */,
 				9B0D78251B8C4E1E009AB47F /* ListDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

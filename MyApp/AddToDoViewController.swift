@@ -12,6 +12,7 @@ import GoogleMobileAds
 
 class AddToDoViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     
     
     @IBOutlet weak var BannerView1: GADBannerView!
