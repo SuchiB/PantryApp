@@ -422,9 +422,6 @@
                                 <rect key="frame" x="73" y="454" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                                <connections>
-                                    <action selector="textFieldReturn:" destination="IgM-L3-iEs" eventType="editingDidEndOnExit" id="m0i-4l-HU6"/>
-                                </connections>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3qd-pf-yu8">
                                 <rect key="frame" x="0.0" y="480" width="211" height="44"/>
@@ -449,12 +446,6 @@
                     <navigationItem key="navigationItem" id="6hW-0T-zf4">
                         <nil key="title"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="changeMapType" destination="ErK-Yd-bzM" id="ZRd-1Z-GQr"/>
-                        <outlet property="mapView" destination="U9e-wF-gMd" id="fps-bb-vgX"/>
-                        <outlet property="searchText" destination="igN-jc-bUF" id="e3I-9y-qxA"/>
-                        <outlet property="zoomIn" destination="GHQ-P5-wCi" id="5E4-SQ-gI3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WY7-cF-Uyf" sceneMemberID="firstResponder"/>
             </objects>
