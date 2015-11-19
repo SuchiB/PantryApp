@@ -14,6 +14,8 @@ import CoreData
 class ListDetailViewController: UIViewController,UITableViewDataSource , UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet var myDatePicker: UIView!
+    @IBOutlet weak var jgjgjg: UITableView!
+    @IBOutlet weak var shopTable: UITableView!
     @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var datePickerAction: UIDatePicker!
     class ViewController: UIViewController {
